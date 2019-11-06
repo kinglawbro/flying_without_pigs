@@ -3,7 +3,7 @@
 
 import requests, os, bs4
 
-url = 'http://boards.4channel.org/v/thread/484142341' # base site url
+url = '' # base site url - taken out as it was a specific link
 os.makedirs('PP', exist_ok=True) #where the images will be stored
   
 #TODO - download page
@@ -15,7 +15,7 @@ print(res.status_code)
 soup = bs4.BeautifulSoup(res.text, "lxml")
     
 #TODO - Find url of images
-for i in range(1,160): # will need to change the range manually
+for i in range(1,160): # will need to change the range manually - 
         
         imageElem = soup.find_all(attrs={"class": "fileThumb"})     
         imageUrl = 'http:' + imageElem[i].get('href')                     
